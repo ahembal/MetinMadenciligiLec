@@ -17,18 +17,18 @@ def ngrams(n, text):
       lst = [(("".join(padded_tokens[i-n:i])), token) for i, token in enumerate(padded_tokens) if i >= n-1] # >>> ngrams(2, 'abc') => [('~~', 'a'), ('~a', 'b'), ('ab', 'c')]
       return  lst[1:]
 
-def create_ngram_model(model_class, path, n=2, k=0):
+def create_ngram_model(model_class, path, n=2):
     ''' Creates and returns a new n-gram model trained on the city names
         found in the path file '''
-    model = model_class(n, k)
+    model = model_class(n)
     with open(path, encoding='utf-8', errors='ignore') as f:
         model.update(f.read())
     return model
 
-def create_ngram_model_lines(model_class, path, n=2, k=0):
+def create_ngram_model_lines(model_class, path, n=2):
     ''' Creates and returns a new n-gram model trained on the city names
         found in the path file '''
-    model = model_class(n, k)
+    model = model_class(n)
     with open(path, encoding='utf-8', errors='ignore') as f:
         for line in f:
             model.update(line.strip())

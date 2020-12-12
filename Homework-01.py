@@ -124,4 +124,73 @@ class NgramModel():
             product += math.log(self.prob(context, token))
         return (1/math.exp(product)) ** (float(1)/(len(text)+1))
     
+    
+if __name__ == '__main__':
+  model1 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=1)
+  model2 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=2)
+  model3 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=3)
+  model4 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=4)
+  model5 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=5)
+  model6 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=6)
+  model7 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=7)
+  model10 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=10)
+  model15 = create_ngram_model(NgramModel, "Baskaldiran-Insan-Albert-Camus.txt", n=15)
+
+
+
+
+  print('============= Uni-gram =============')
+
+  #print(model1.get_vocab())
+  #print('-------')
+  print(model2.random_text(300))
+
+
+  print()
+  print('============= Bi-gram =============')
+
+  #print('-------')
+  print(model2.random_text(300))
+
+
+  print()
+  print('============= Tri-gram =============')
+
+  print(model3.random_text(300))
+
+
+  print()
+  print('============= Four-gram =============')
+
+  print(model4.random_text(300))
+
+
+
+  print()
+  print('============= Five-gram =============')
+
+  print(model5.random_text(300))
+
+
+  print()
+  print('============= Six-gram =============')
+
+  print(model6.random_text(300))
+
+  print()
+  print('============= Seven-gram =============')
+
+  print(model7.random_text(300))
+
+
+  print()
+  print('============= Ten-gram =============')
+
+  print(model10.random_text(300))
+
+
+  print()
+  print('============= 15-gram =============')
+
+  print(model15.random_text(300))
    
